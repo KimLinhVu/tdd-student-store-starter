@@ -11,6 +11,7 @@ import axios from "axios"
 import "./App.css"
 
 export default function App() {
+  const[baseProducts, setBaseProducts] = useState([])
   const[products, setProducts] = useState([])
   const[type, setType] = useState('')
   const[search, setSearch] = useState('')
@@ -22,18 +23,23 @@ export default function App() {
   const[subtotalPrice, setSubtotalPrice] = useState(0)
   const[taxPrice, setTaxPrice] = useState(0)
   const[totalPrice, setTotalPrice] = useState(0)
+
+  const isEmptyString = (arg) => {
+    return arg === ''
+  }
   
   useEffect(() => {
     axios.get("https://codepath-store-api.herokuapp.com/store").then(res => {
       let newProduct = res.data.products
-      if (search !== ''){
+      setBaseProducts(newProduct)
+      if (!isEmptyString(search)){
         setProducts(newProduct = newProduct.filter((product) => {
           return product.name.toLowerCase().includes(search)
         })) 
       } else {
         setProducts(newProduct)
       }
-      if (type !== ''){
+      if (!isEmptyString(type)){
         setProducts(newProduct = newProduct.filter((product) => {
           return product.category === type
         }))
@@ -50,31 +56,33 @@ export default function App() {
   }
 
   const handleAddItemToCart = (productId) => {
-    let prodIdx = shoppingCart.findIndex(item => item.itemId === productId)
-    if (prodIdx != -1) {
+    let shopIdx = shoppingCart.findIndex(item => item.itemId === productId)
+    let prodIdx = products.findIndex(item => item.id === productId)
+    if (shopIdx != -1) {
       let newCart = [...shoppingCart]
-      newCart[prodIdx].quantity += 1
+      newCart[shopIdx].quantity += 1
       setShoppingCart(newCart)
     }
     else {
       let newProduct = {itemId: productId, quantity: 1}
       setShoppingCart([...shoppingCart, newProduct])
     }
-    setSubtotalPrice(subtotalPrice + products[productId - 1].price)
+    setSubtotalPrice(subtotalPrice + products[prodIdx].price)
   }
 
   const handleRemoveItemFromCart = (productId) => {
-    let prodIdx = shoppingCart.findIndex(item => item.itemId === productId)
-    if (prodIdx != -1) {
+    let shopIdx = shoppingCart.findIndex(item => item.itemId === productId)
+    let prodIdx = products.findIndex(item => item.id === productId)
+    if (shopIdx != -1) {
       let newCart = [...shoppingCart]
-      newCart[prodIdx].quantity -= 1
-      if (newCart[prodIdx].quantity == 0){
-        newCart.splice(prodIdx, 1)
+      newCart[shopIdx].quantity -= 1
+      if (newCart[shopIdx].quantity == 0){
+        newCart.splice(shopIdx, 1)
         setShoppingCart(newCart)
       } else {
         setShoppingCart(newCart)
       }
-      setSubtotalPrice(subtotalPrice - products[productId - 1].price)
+      setSubtotalPrice(subtotalPrice - products[prodIdx].price)
     }
   }
 
@@ -106,7 +114,8 @@ export default function App() {
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar 
-            products={products} 
+            products={products}
+            baseProducts={baseProducts}
             shoppingCart={shoppingCart} 
             subtotalPrice={subtotalPrice} 
             taxPrice={taxPrice} 

@@ -7,7 +7,8 @@ import CheckoutForm from "../CheckoutForm/CheckoutForm"
 export default function Sidebar({
   isOpen, 
   shoppingCart, 
-  products, 
+  products,
+  baseProducts,
   subtotalPrice, 
   taxPrice, 
   totalPrice, 
@@ -22,12 +23,13 @@ export default function Sidebar({
       {isOpen == true ?
       <>
         <ShoppingCart 
-          isOpen={isOpen} 
+          isOpen={isOpen}
           shoppingCart={shoppingCart} 
           subtotalPrice={subtotalPrice} 
           taxPrice={taxPrice} 
           totalPrice={totalPrice} 
           products={products}
+          baseProducts={baseProducts}
         />
         <CheckoutForm 
           checkoutForm={checkoutForm} 

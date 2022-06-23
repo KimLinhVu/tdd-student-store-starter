@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
     "env": {
         "browser": true,
@@ -22,6 +21,6 @@ module.exports = {
         "no-irregular-whitespace": 1,
         "react/prop-types": 0,
         "space-before-blocks": 1,
-        // "no-console": 1
+        "no-console": 1
     }
 }
