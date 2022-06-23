@@ -4,7 +4,8 @@ import "./CheckoutForm.css"
 export default function CheckoutForm({
   isOpen, 
   shoppingCart, 
-  checkoutForm, 
+  checkoutForm,
+  checkoutMessage,
   handleOnCheckoutFormChange, 
   handleOnSubmitCheckoutForm
 }) {
@@ -37,7 +38,9 @@ export default function CheckoutForm({
         </div>
       </div>
      
-      <button className="checkout-button" onClick={handleOnSubmitCheckoutForm}>Checkout</button>
+      {shoppingCart.length > 0 ? <button className="checkout-button" onClick={handleOnSubmitCheckoutForm}>Checkout</button> : null }
+      {checkoutMessage == true ? <p className='success'>Success!</p> : null}
+      {checkoutMessage == false ? <p className='error'>Error</p> : null}
     </div>
   )
 }

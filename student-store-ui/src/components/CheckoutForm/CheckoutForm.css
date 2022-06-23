@@ -40,3 +40,7 @@
     border: solid 1px white;
     color: white;
 }
+
+.checkout-form .success {
+    color: white;
+}

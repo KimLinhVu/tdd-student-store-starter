@@ -23,6 +23,7 @@ export default function App() {
   const[subtotalPrice, setSubtotalPrice] = useState(0)
   const[taxPrice, setTaxPrice] = useState(0)
   const[totalPrice, setTotalPrice] = useState(0)
+  const[checkoutMessage, setCheckoutMessage] = useState(null)
 
   const isEmptyString = (arg) => {
     return arg === ''
@@ -96,15 +97,19 @@ export default function App() {
     console.log(checkoutForm)
   }
 
-  const handleOnSubmitCheckoutForm = () => {
-    axios.post('https://codepath-store-api.herokuapp.com/store', {
+  const handleOnSubmitCheckoutForm = async () => {
+    const data = await axios.post('https://codepath-store-api.herokuapp.com/store',
+    {
       user: {
         name: checkoutForm.name,
         email: checkoutForm.email
       },
       shoppingCart: shoppingCart
-    }).then(res => console.log(res))
-    .catch(err => console.log(err))
+    })
+    console.log(data)
+    data.statusText === "Created" ? setCheckoutMessage(true) : setCheckoutMessage(false)
+    setShoppingCart([])
+    setCheckoutForm({name: '', email: ''})
   }
 
   return (
@@ -120,7 +125,8 @@ export default function App() {
             subtotalPrice={subtotalPrice} 
             taxPrice={taxPrice} 
             totalPrice={totalPrice} 
-            checkoutForm={checkoutForm} 
+            checkoutForm={checkoutForm}
+            checkoutMessage={checkoutMessage}
             isOpen={isOpen} 
             handleOnToggle={handleOnToggle} 
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}

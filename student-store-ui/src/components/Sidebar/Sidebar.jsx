@@ -12,7 +12,8 @@ export default function Sidebar({
   subtotalPrice, 
   taxPrice, 
   totalPrice, 
-  checkoutForm, 
+  checkoutForm,
+  checkoutMessage,
   handleOnCheckoutFormChange, 
   handleOnSubmitCheckoutForm, 
   handleOnToggle
@@ -32,7 +33,9 @@ export default function Sidebar({
           baseProducts={baseProducts}
         />
         <CheckoutForm 
-          checkoutForm={checkoutForm} 
+          checkoutForm={checkoutForm}
+          checkoutMessage={checkoutMessage}
+          shoppingCart={shoppingCart}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
         />
