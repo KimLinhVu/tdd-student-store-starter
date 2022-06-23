@@ -41,7 +41,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 8px 12px;
+    padding: 0 12px;
 }
 
 .product-card .actions {
@@ -105,4 +105,13 @@
 .product-card .main-info .product-name {
     font-size: 15px;
     font-weight: 500;
+}
+
+.product-card .product-description {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    width: 100%;
 }

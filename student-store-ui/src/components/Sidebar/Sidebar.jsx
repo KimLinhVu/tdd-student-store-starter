@@ -18,7 +18,7 @@ export default function Sidebar({
 }) {
   return (
     <section className={isOpen == true ? "sidebar open" : "sidebar closed"}>
-      <button className="toggle-button" onClick={handleOnToggle}>Button</button>
+      <button className="toggle-button" onClick={handleOnToggle}>{isOpen == true ? <i className="material-icons md-48">arrow_back</i> : <i className="material-icons md-48">arrow_forward</i>}</button>
       {isOpen == true ?
       <>
         <ShoppingCart 

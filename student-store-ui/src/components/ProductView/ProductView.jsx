@@ -12,9 +12,10 @@ export const ProductView = ({
   handleRemoveItemToCart
 }) => {
   console.log(shoppingCart)
+  console.log(productId)
   return (
     <div className='product-view'>
-      <Hero />
+      {/* <Hero /> */}
       <h1 className='product-id'>Product #{productId}</h1>
       <ProductCard 
         product={product} 
