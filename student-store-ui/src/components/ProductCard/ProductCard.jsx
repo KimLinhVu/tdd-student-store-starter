@@ -31,8 +31,8 @@ export const ProductCard = ({
         {showDescription == true ? <p className='product-description'>{product.description}</p> : null}
         <div className="actions">
           <div className="buttons">
-            <button className="add" onClick={() => handleAddItemToCart(productId)}><i className="material-icons">add</i></button>
             <button className="remove" onClick={() => handleRemoveItemToCart(productId)}><i className="material-icons">remove</i></button>
+            <button className="add" onClick={() => handleAddItemToCart(productId)}><i className="material-icons">add</i></button>
           </div>
           {getQuantity()}
         </div>
