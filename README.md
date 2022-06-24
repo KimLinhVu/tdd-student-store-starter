@@ -4,13 +4,17 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+
+
+https://user-images.githubusercontent.com/90161607/175748684-d9b8d0e9-1e3c-4bc0-80ec-bcd42afb2d02.mp4
+
+
 
 ### Application Features
 
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [x] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
 - [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [x] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [x] User can search for products.
@@ -23,7 +27,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 #### Stretch Features
 
-- [ ] User can click in the top navigation bar to scroll to the relevant section.
+- [x] User can click in the top navigation bar to scroll to the relevant section.
 - [x] User sees a "not found" display when searching for a nonexistent product.
 - [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
@@ -37,7 +41,7 @@ The following specifications were met on the Express backend and the React front
 
 **App.jsx**
 
-  - [ ] The core App component that contains the routes for the app and does the initial data fetching
+  - [x] The core App component that contains the routes for the app and does the initial data fetching
   - [x] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
     - [x] `/` - Should render the `Home.jsx` component
     - [x] `/products/:productId` - should render the `ProductDetail` component
@@ -84,7 +88,7 @@ The following specifications were met on the Express backend and the React front
       - [x] The **`handleOnSubmitCheckoutForm`** function. When called...
         - [x] It should submit the user's order to the API
         - [x] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
-        - [ ] The body of that `POST` request should be an object with two fields:
+        - [x] The body of that `POST` request should be an object with two fields:
           - [x] The `user` field:
             - [x] Should be an object containing `name` and `email` properties
             - [x] Each property should be set to the correct value found in the `checkoutForm`
