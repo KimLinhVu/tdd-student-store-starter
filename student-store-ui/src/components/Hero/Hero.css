@@ -9,7 +9,7 @@
 }
 
 .hero .content {
-    background: #00c385;
+    background: #CEC7CC;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -51,7 +51,6 @@
 }
 
 .hero .content img {
-    width: 120px;
-    height: 120px;
-    margin: 0 105px 0 50px;
+    width: 500px;
+    height: 300px;
 }
