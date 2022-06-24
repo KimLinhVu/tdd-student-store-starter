@@ -1,0 +1,62 @@
+.contact {
+    width: 100%;
+    align-items: center;
+    min-height: 350px;
+    margin: 40px 0;
+}
+
+.contact .content {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+}
+
+.contactt .content h3 {
+    margin: 10px 0 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.contact .content .summary {
+    display: flex;
+    flex-direction: row;
+    background: #51648C;
+    color: white;
+    height: 330px;
+    border: solid 1px #e0e0e0;
+    flex: 0 1 auto;
+}
+
+.contact .content .summary .info {
+    padding: 28px 36px;
+    color: white;
+    list-style-type: none;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.contact .content .summary .info li {
+    color: white;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.contact .content .summary .info li span {
+    margin-right: 20px;
+    color: white;
+}
+
+.contact .content .summary .media img{
+    width: 350px;
+    margin-right: 100px;
+    transform: translateY(-62px);
+}

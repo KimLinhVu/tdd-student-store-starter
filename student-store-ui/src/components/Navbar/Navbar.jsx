@@ -7,12 +7,12 @@ export default function Navbar ({ isOpen }) {
   return (
     <nav className={isOpen === true ? 'navbar-open' : 'navbar'}>
       <Logo />
-      <ul className="links">
+      <div className="links">
         <Link to="/">Home</Link>
-        <Link to="/">About Us</Link>
-        <Link to="/">Contact Us</Link>
+        <a href='/#about'>About Us</a>
+        <a href="/#contact">Contact Us</a>
         <Link to="/">Buy Now</Link>
-      </ul>
+      </div>
     </nav>
   )
 }

@@ -106,16 +106,17 @@ export default function App () {
           shoppingCart
         })
       data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
+      setShoppingCart([])
+      setCheckoutForm({ name: '', email: '' })
     } catch (err) {
       setCheckoutMessage(false)
     }
-    setShoppingCart([])
-    setCheckoutForm({ name: '', email: '' })
   }
 
   return (
     <div className="app">
       <BrowserRouter>
+        <main>
         <Sidebar
           products={products}
           baseProducts={baseProducts}
@@ -130,7 +131,6 @@ export default function App () {
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
         />
-        <main>
           {isFetching
             ? <h1>Loading...</h1>
             : <><Navbar isOpen={isOpen}/>

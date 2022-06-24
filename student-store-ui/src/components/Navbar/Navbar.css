@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 .navbar {
     width: 100%;
     max-width: 100vw;
@@ -30,6 +26,10 @@
 .logo {
     width: 100px;
     margin-right: 50px;
+}
+
+.logo img {
+    width: 50px;
 }
 
 .links {

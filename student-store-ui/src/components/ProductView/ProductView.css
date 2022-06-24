@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 .product-view .contents {
     display: flex;
     flex-direction: column;

@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 .product-grid .product-card {
     height: 350px;
     width: 250px;
@@ -9,11 +5,18 @@
     display: flex;
     flex-direction: column;
     border: solid 1px #e4e4e4;
+    transition: 200ms ease-in-out;
+}
+
+.product-grid .product-card:hover {
+    box-shadow: 5px 8px 13px #888888;
 }
 
 .product-grid .product-card .media img{
     height: 250px;
     width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .product-card {
@@ -22,6 +25,7 @@
     flex-direction: column;
     border: solid 1px #e4e4e4;
     max-width: 800px;
+    border-radius: 10px;
 }
 
 .product-card .media img {
@@ -93,7 +97,7 @@
 }
 
 .product-card .product-quantity .amt {
-    background: orange;
+    background: #DCB4BD;
     color: white;
     width: 20px;
     height: 20px;
