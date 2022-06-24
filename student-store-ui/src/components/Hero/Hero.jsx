@@ -11,7 +11,7 @@ export const Hero = () => {
             <p>We have all kinds of goodies. Click on any of the items to start filling up your shopping cart. Checkout whenever you're ready.</p>
           </div>
           <div className="media">
-            <img src="./student_store_icon.18e5d61a.svg" alt="hero" className="hero-img" />
+            <img src="../student_store_icon.18e5d61a.svg" alt="hero" className="hero-img" />
           </div>
         </div>
     </div>

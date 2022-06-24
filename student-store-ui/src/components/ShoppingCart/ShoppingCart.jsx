@@ -50,13 +50,13 @@ export default function ShoppingCart ({
           <span className="label">Taxes and Fees</span>
           <span></span>
           <span></span>
-          <span className='center subtotal'>{formatter.format(taxPrice)}</span>
+          <span className='center'>{formatter.format(taxPrice)}</span>
         </div>
         <div className="receipt-total">
           <span className="label">Total</span>
           <span></span>
           <span></span>
-          <span className='center subtotal'>{formatter.format(totalPrice)}</span>
+          <span className='center total-price'>{formatter.format(totalPrice)}</span>
         </div>
       </div>
         : null}

@@ -46,7 +46,6 @@ export default function App () {
         }))
       }
     }).catch(err => {
-      console.log(err)
       setError(err)
     })
   }, [search, type])
@@ -92,7 +91,6 @@ export default function App () {
 
   const handleOnCheckoutFormChange = (name, value) => {
     setCheckoutForm({ ...checkoutForm, [name]: value })
-    console.log(checkoutForm)
   }
 
   const handleOnSubmitCheckoutForm = async () => {
@@ -104,7 +102,6 @@ export default function App () {
         },
         shoppingCart
       })
-    console.log(data)
     data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
     setShoppingCart([])
     setCheckoutForm({ name: '', email: '' })
@@ -113,10 +110,7 @@ export default function App () {
   return (
     <div className="app">
       <BrowserRouter>
-        <main>
-          {/* YOUR CODE HERE! */}
-          <Navbar />
-          <Sidebar
+      <Sidebar
             products={products}
             baseProducts={baseProducts}
             shoppingCart={shoppingCart}
@@ -130,30 +124,35 @@ export default function App () {
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           />
-          <Routes>
-            <Route path="/"
-              element={
-              <Home
-                products={products}
-                handleAddItemToCart={handleAddItemToCart}
-                handleRemoveItemToCart={handleRemoveItemFromCart}
-                setSearch={setSearch}
-                setType={setType}
-                type={type}
-                shoppingCart={shoppingCart}
-              />}
-            />
-            <Route path="/products/:productId"
-              element={
-              <ProductDetail
-                shoppingCart={shoppingCart}
-                handleAddItemToCart={handleAddItemToCart}
-                handleRemoveItemToCart={handleRemoveItemFromCart}
-              />}
-            />
-            <Route path="*" element={<NotFound />}/>
+        <main>
+          <Navbar />
+          <div className={isOpen === true ? 'content-open' : 'content'}>
+            <Routes>
+              <Route path="/"
+                element={
+                <Home
+                  products={products}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemToCart={handleRemoveItemFromCart}
+                  setSearch={setSearch}
+                  setType={setType}
+                  type={type}
+                  shoppingCart={shoppingCart}
+                />}
+              />
+              <Route path="/products/:productId"
+                element={
+                <ProductDetail
+                  shoppingCart={shoppingCart}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemToCart={handleRemoveItemFromCart}
+                  setError={setError}
+                />}
+              />
+              <Route path="*" element={<NotFound />}/>
 
-          </Routes>
+            </Routes>
+          </div>
         </main>
       </BrowserRouter>
     </div>

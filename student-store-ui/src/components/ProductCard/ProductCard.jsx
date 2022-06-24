@@ -12,7 +12,7 @@ export const ProductCard = ({
 }) => {
   const getQuantity = () => {
     const idx = shoppingCart.findIndex(item => item.itemId === productId)
-    return idx !== -1 ? <span className='quantity'><span className='amt'>{shoppingCart[idx].quantity}</span></span> : null
+    return idx !== -1 ? <span className='product-quantity'><span className='amt'>{shoppingCart[idx].quantity}</span></span> : null
   }
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
