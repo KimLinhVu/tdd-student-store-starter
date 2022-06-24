@@ -15,7 +15,7 @@ export default function App () {
   const [products, setProducts] = useState([])
   const [type, setType] = useState('')
   const [search, setSearch] = useState('')
-  // const [isFetching, setIsFetching] = useState(false)
+  const [isFetching, setIsFetching] = useState(false)
   const [error, setError] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [shoppingCart, setShoppingCart] = useState([])
@@ -30,6 +30,7 @@ export default function App () {
   }
 
   useEffect(() => {
+    setIsFetching(true)
     axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
       let newProduct = res.data.products
       setBaseProducts(newProduct)
@@ -48,6 +49,7 @@ export default function App () {
     }).catch(err => {
       setError(err)
     })
+    setIsFetching(false)
   }, [search, type])
 
   const handleOnToggle = () => {
@@ -94,15 +96,19 @@ export default function App () {
   }
 
   const handleOnSubmitCheckoutForm = async () => {
-    const data = await axios.post('https://codepath-store-api.herokuapp.com/store',
-      {
-        user: {
-          name: checkoutForm.name,
-          email: checkoutForm.email
-        },
-        shoppingCart
-      })
-    data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
+    try {
+      const data = await axios.post('https://codepath-store-api.herokuapp.com/store',
+        {
+          user: {
+            name: checkoutForm.name,
+            email: checkoutForm.email
+          },
+          shoppingCart
+        })
+      data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
+    } catch (err) {
+      setCheckoutMessage(false)
+    }
     setShoppingCart([])
     setCheckoutForm({ name: '', email: '' })
   }
@@ -110,22 +116,24 @@ export default function App () {
   return (
     <div className="app">
       <BrowserRouter>
-      <Sidebar
-            products={products}
-            baseProducts={baseProducts}
-            shoppingCart={shoppingCart}
-            subtotalPrice={subtotalPrice}
-            taxPrice={taxPrice}
-            totalPrice={totalPrice}
-            checkoutForm={checkoutForm}
-            checkoutMessage={checkoutMessage}
-            isOpen={isOpen}
-            handleOnToggle={handleOnToggle}
-            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-          />
+        <Sidebar
+          products={products}
+          baseProducts={baseProducts}
+          shoppingCart={shoppingCart}
+          subtotalPrice={subtotalPrice}
+          taxPrice={taxPrice}
+          totalPrice={totalPrice}
+          checkoutForm={checkoutForm}
+          checkoutMessage={checkoutMessage}
+          isOpen={isOpen}
+          handleOnToggle={handleOnToggle}
+          handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+        />
         <main>
-          <Navbar isOpen={isOpen}/>
+          {isFetching
+            ? <h1>Loading...</h1>
+            : <><Navbar isOpen={isOpen}/>
           <div className={isOpen === true ? 'content-open' : 'content'}>
             <Routes>
               <Route path="/"
@@ -143,6 +151,8 @@ export default function App () {
               <Route path="/products/:productId"
                 element={
                 <ProductDetail
+                  isFetching={isFetching}
+                  setIsFetching={setIsFetching}
                   shoppingCart={shoppingCart}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemToCart={handleRemoveItemFromCart}
@@ -152,7 +162,7 @@ export default function App () {
               <Route path="*" element={<NotFound />}/>
 
             </Routes>
-          </div>
+          </div></>}
         </main>
       </BrowserRouter>
     </div>
