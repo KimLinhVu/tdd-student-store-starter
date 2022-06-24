@@ -1,51 +1,50 @@
-import * as React from "react"
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
-import { NotFound } from "../NotFound/NotFound"
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import {useEffect, useState} from "react"
-import { ProductDetail } from "../ProductDetail/ProductDetail"
-import axios from "axios"
+import * as React from 'react'
+import Navbar from '../Navbar/Navbar'
+import Sidebar from '../Sidebar/Sidebar'
+import Home from '../Home/Home'
+import { NotFound } from '../NotFound/NotFound'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { ProductDetail } from '../ProductDetail/ProductDetail'
+import axios from 'axios'
 
-import "./App.css"
+import './App.css'
 
-export default function App() {
-  const[baseProducts, setBaseProducts] = useState([])
-  const[products, setProducts] = useState([])
-  const[type, setType] = useState('')
-  const[search, setSearch] = useState('')
-  const[isFetching, setIsFetching] = useState(false)
-  const[error, setError] = useState('')
-  const[isOpen, setIsOpen] = useState(false)
-  const[shoppingCart, setShoppingCart] = useState([])
-  const[checkoutForm, setCheckoutForm] = useState({name: '', email: ''})
-  const[subtotalPrice, setSubtotalPrice] = useState(0)
-  const[taxPrice, setTaxPrice] = useState(0)
-  const[totalPrice, setTotalPrice] = useState(0)
-  const[checkoutMessage, setCheckoutMessage] = useState(null)
+export default function App () {
+  const [baseProducts, setBaseProducts] = useState([])
+  const [products, setProducts] = useState([])
+  const [type, setType] = useState('')
+  const [search, setSearch] = useState('')
+  // const [isFetching, setIsFetching] = useState(false)
+  const [error, setError] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
+  const [shoppingCart, setShoppingCart] = useState([])
+  const [checkoutForm, setCheckoutForm] = useState({ name: '', email: '' })
+  const [subtotalPrice, setSubtotalPrice] = useState(0)
+  const [taxPrice, setTaxPrice] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
+  const [checkoutMessage, setCheckoutMessage] = useState(null)
 
   const isEmptyString = (arg) => {
     return arg === ''
   }
-  
+
   useEffect(() => {
-    axios.get("https://codepath-store-api.herokuapp.com/store").then(res => {
+    axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
       let newProduct = res.data.products
       setBaseProducts(newProduct)
-      if (!isEmptyString(search)){
+      if (!isEmptyString(search)) {
         setProducts(newProduct = newProduct.filter((product) => {
           return product.name.toLowerCase().includes(search)
-        })) 
+        }))
       } else {
         setProducts(newProduct)
       }
-      if (!isEmptyString(type)){
+      if (!isEmptyString(type)) {
         setProducts(newProduct = newProduct.filter((product) => {
           return product.category === type
         }))
       }
-      
     }).catch(err => {
       console.log(err)
       setError(err)
@@ -57,27 +56,26 @@ export default function App() {
   }
 
   const handleAddItemToCart = (productId) => {
-    let shopIdx = shoppingCart.findIndex(item => item.itemId === productId)
-    let prodIdx = products.findIndex(item => item.id === productId)
-    if (shopIdx != -1) {
-      let newCart = [...shoppingCart]
+    const shopIdx = shoppingCart.findIndex(item => item.itemId === productId)
+    const prodIdx = products.findIndex(item => item.id === productId)
+    if (shopIdx !== -1) {
+      const newCart = [...shoppingCart]
       newCart[shopIdx].quantity += 1
       setShoppingCart(newCart)
-    }
-    else {
-      let newProduct = {itemId: productId, quantity: 1}
+    } else {
+      const newProduct = { itemId: productId, quantity: 1 }
       setShoppingCart([...shoppingCart, newProduct])
     }
     setSubtotalPrice(subtotalPrice + products[prodIdx].price)
   }
 
   const handleRemoveItemFromCart = (productId) => {
-    let shopIdx = shoppingCart.findIndex(item => item.itemId === productId)
-    let prodIdx = products.findIndex(item => item.id === productId)
-    if (shopIdx != -1) {
-      let newCart = [...shoppingCart]
+    const shopIdx = shoppingCart.findIndex(item => item.itemId === productId)
+    const prodIdx = products.findIndex(item => item.id === productId)
+    if (shopIdx !== -1) {
+      const newCart = [...shoppingCart]
       newCart[shopIdx].quantity -= 1
-      if (newCart[shopIdx].quantity == 0){
+      if (newCart[shopIdx].quantity === 0) {
         newCart.splice(shopIdx, 1)
         setShoppingCart(newCart)
       } else {
@@ -88,28 +86,28 @@ export default function App() {
   }
 
   useEffect(() => {
-    setTaxPrice(subtotalPrice * .0875)
+    setTaxPrice(subtotalPrice * 0.0875)
     setTotalPrice(taxPrice + subtotalPrice)
   }, [subtotalPrice, taxPrice])
 
   const handleOnCheckoutFormChange = (name, value) => {
-    setCheckoutForm({...checkoutForm, [name]: value})
+    setCheckoutForm({ ...checkoutForm, [name]: value })
     console.log(checkoutForm)
   }
 
   const handleOnSubmitCheckoutForm = async () => {
     const data = await axios.post('https://codepath-store-api.herokuapp.com/store',
-    {
-      user: {
-        name: checkoutForm.name,
-        email: checkoutForm.email
-      },
-      shoppingCart: shoppingCart
-    })
+      {
+        user: {
+          name: checkoutForm.name,
+          email: checkoutForm.email
+        },
+        shoppingCart
+      })
     console.log(data)
-    data.statusText === "Created" ? setCheckoutMessage(true) : setCheckoutMessage(false)
+    data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
     setShoppingCart([])
-    setCheckoutForm({name: '', email: ''})
+    setCheckoutForm({ name: '', email: '' })
   }
 
   return (
@@ -118,43 +116,43 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
-          <Sidebar 
+          <Sidebar
             products={products}
             baseProducts={baseProducts}
-            shoppingCart={shoppingCart} 
-            subtotalPrice={subtotalPrice} 
-            taxPrice={taxPrice} 
-            totalPrice={totalPrice} 
+            shoppingCart={shoppingCart}
+            subtotalPrice={subtotalPrice}
+            taxPrice={taxPrice}
+            totalPrice={totalPrice}
             checkoutForm={checkoutForm}
             checkoutMessage={checkoutMessage}
-            isOpen={isOpen} 
-            handleOnToggle={handleOnToggle} 
+            isOpen={isOpen}
+            handleOnToggle={handleOnToggle}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           />
           <Routes>
-            <Route path="/" 
+            <Route path="/"
               element={
-              <Home 
-                products={products} 
-                handleAddItemToCart={handleAddItemToCart} 
-                handleRemoveItemToCart={handleRemoveItemFromCart} 
-                setSearch={setSearch} 
-                setType={setType} 
+              <Home
+                products={products}
+                handleAddItemToCart={handleAddItemToCart}
+                handleRemoveItemToCart={handleRemoveItemFromCart}
+                setSearch={setSearch}
+                setType={setType}
                 type={type}
                 shoppingCart={shoppingCart}
               />}
             />
-            <Route path="/products/:productId" 
+            <Route path="/products/:productId"
               element={
               <ProductDetail
                 shoppingCart={shoppingCart}
-                handleAddItemToCart={handleAddItemToCart} 
+                handleAddItemToCart={handleAddItemToCart}
                 handleRemoveItemToCart={handleRemoveItemFromCart}
               />}
             />
             <Route path="*" element={<NotFound />}/>
-            
+
           </Routes>
         </main>
       </BrowserRouter>

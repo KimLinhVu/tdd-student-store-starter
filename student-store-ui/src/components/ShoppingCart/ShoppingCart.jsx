@@ -1,23 +1,24 @@
 import React from 'react'
-import "./ShoppingCart.css"
+import './ShoppingCart.css'
 
-export default function ShoppingCart({
-  isOpen, 
-  subtotalPrice, 
-  taxPrice, 
-  totalPrice, 
+export default function ShoppingCart ({
+  isOpen,
+  subtotalPrice,
+  taxPrice,
+  totalPrice,
   products,
   baseProducts,
   shoppingCart
 }) {
-  var formatter = new Intl.NumberFormat('en-US', {
+  const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'USD'
   })
 
   return (
     <div className='shopping-cart'>
-      {shoppingCart.length > 0 ? <div className="CartTable">
+      {shoppingCart.length > 0
+        ? <div className="CartTable">
         <div className="header">
           <div className="header-row">
             <span className="flex-2">Name</span>
@@ -35,8 +36,10 @@ export default function ShoppingCart({
             </div>)
           })}
         </div>
-      </div>: <div className='notification'>No items added to cart yet. Start shopping now!</div>}
-      {shoppingCart.length > 0 ? <div className="receipt">
+      </div>
+        : <div className='notification'>No items added to cart yet. Start shopping now!</div>}
+      {shoppingCart.length > 0
+        ? <div className="receipt">
         <div className="receipt-subtotal">
           <span className="label">Subtotal</span>
           <span></span>
@@ -55,7 +58,8 @@ export default function ShoppingCart({
           <span></span>
           <span className='center subtotal'>{formatter.format(totalPrice)}</span>
         </div>
-      </div>: null}
+      </div>
+        : null}
     </div>
   )
 }
