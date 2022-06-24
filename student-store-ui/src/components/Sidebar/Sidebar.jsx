@@ -7,7 +7,8 @@ import CheckoutForm from "../CheckoutForm/CheckoutForm"
 export default function Sidebar({
   isOpen, 
   shoppingCart, 
-  products, 
+  products,
+  baseProducts,
   subtotalPrice, 
   taxPrice, 
   totalPrice, 
@@ -18,16 +19,17 @@ export default function Sidebar({
 }) {
   return (
     <section className={isOpen == true ? "sidebar open" : "sidebar closed"}>
-      <button className="toggle-button" onClick={handleOnToggle}>Button</button>
+      <button className="toggle-button" onClick={handleOnToggle}>{isOpen == true ? <i className="material-icons md-48">arrow_back</i> : <i className="material-icons md-48">arrow_forward</i>}</button>
       {isOpen == true ?
       <>
         <ShoppingCart 
-          isOpen={isOpen} 
+          isOpen={isOpen}
           shoppingCart={shoppingCart} 
           subtotalPrice={subtotalPrice} 
           taxPrice={taxPrice} 
           totalPrice={totalPrice} 
           products={products}
+          baseProducts={baseProducts}
         />
         <CheckoutForm 
           checkoutForm={checkoutForm} 

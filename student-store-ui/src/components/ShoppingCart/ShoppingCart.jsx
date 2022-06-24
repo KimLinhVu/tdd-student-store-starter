@@ -6,7 +6,8 @@ export default function ShoppingCart({
   subtotalPrice, 
   taxPrice, 
   totalPrice, 
-  products, 
+  products,
+  baseProducts,
   shoppingCart
 }) {
   var formatter = new Intl.NumberFormat('en-US', {
@@ -27,10 +28,10 @@ export default function ShoppingCart({
           {shoppingCart.map((item, idx) => {
             return (
             <div className='product-row' key={idx}>
-              <span className="flex-2 card-product-name">{products[item.itemId - 1].name}</span>
+              <span className="flex-2 card-product-name">{baseProducts[item.itemId - 1].name}</span>
               <span className="center cart-product-quantity">{item.quantity}</span>
-              <span className='center cart-product-price'>{products[item.itemId - 1].price}</span>
-              <span className='center cart-product-subtotal'>{products[item.itemId-1].price * item.quantity}</span>
+              <span className='center cart-product-price'>{formatter.format(baseProducts[item.itemId - 1].price)}</span>
+              <span className='center cart-product-subtotal'>{formatter.format(baseProducts[item.itemId - 1].price * item.quantity)}</span>
             </div>)
           })}
         </div>

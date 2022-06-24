@@ -37,7 +37,6 @@ export const ProductCard = ({
           {getQuantity()}
         </div>
       </div>
-      {/* {quantity > 0 ? <span className='product-quantity'>{quantity}</span> : null} */}
     </div>
   )
 }

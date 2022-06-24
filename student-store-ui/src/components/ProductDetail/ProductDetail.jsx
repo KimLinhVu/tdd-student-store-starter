@@ -26,7 +26,7 @@ export const ProductDetail = ({
       {product !== '' ? 
       <ProductView 
         product={product} 
-        productId={productId}
+        productId={parseInt(productId)}
         shoppingCart={shoppingCart}
         handleAddItemToCart={handleAddItemToCart} 
         handleRemoveItemToCart={handleRemoveItemToCart}
