@@ -2,6 +2,7 @@ import React from 'react'
 import './SubNavBar.css'
 
 export const SubNavBar = ({
+  search,
   setSearch,
   setType,
   type
@@ -13,7 +14,7 @@ export const SubNavBar = ({
                 <div className="search-bar">
                     <input type="text" name="search" placeholder='Search' onChange={(e) => {
                       setSearch(e.target.value.toLowerCase())
-                    }}/>
+                    }} value={search}/>
                 </div>
             </div>
             <div className="row">

@@ -142,6 +142,7 @@ export default function App () {
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemToCart={handleRemoveItemFromCart}
+                  search={search}
                   setSearch={setSearch}
                   setType={setType}
                   type={type}

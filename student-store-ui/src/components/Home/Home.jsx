@@ -10,6 +10,7 @@ export default function Home ({
   products,
   handleAddItemToCart,
   handleRemoveItemToCart,
+  search,
   setSearch,
   setType,
   type,
@@ -20,6 +21,7 @@ export default function Home ({
       <Hero />
       <SubNavBar
         setType={setType}
+        search={search}
         setSearch={setSearch}
         type={type}
       />
