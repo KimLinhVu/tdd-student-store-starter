@@ -41,6 +41,12 @@
     color: white;
 }
 
-.checkout-form .success {
+.checkout-form .success, .error {
     color: white;
+}
+
+.checkout-form .submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

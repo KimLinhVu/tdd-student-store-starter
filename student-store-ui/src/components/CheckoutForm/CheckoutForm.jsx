@@ -38,9 +38,11 @@ export default function CheckoutForm ({
         </div>
       </div>
 
-      {shoppingCart.length > 0 ? <button className="checkout-button" onClick={handleOnSubmitCheckoutForm}>Checkout</button> : null }
-      {checkoutMessage === true ? <p className='success'>Success!</p> : null}
-      {checkoutMessage === false ? <p className='error'>Error</p> : null}
+      <div className="submit">
+        {checkoutMessage === true ? <p className='success'>Success!</p> : null}
+        {checkoutMessage === false ? <p className='error'>{shoppingCart.length > 0 ? 'Please enter all required fields' : 'Please add items to your shopping cart'}</p> : null}
+        <button className="checkout-button" onClick={handleOnSubmitCheckoutForm}>Checkout</button>
+      </div>
     </div>
   )
 }
