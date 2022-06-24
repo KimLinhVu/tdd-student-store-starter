@@ -125,7 +125,7 @@ export default function App () {
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           />
         <main>
-          <Navbar />
+          <Navbar isOpen={isOpen}/>
           <div className={isOpen === true ? 'content-open' : 'content'}>
             <Routes>
               <Route path="/"
