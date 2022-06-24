@@ -1,11 +1,11 @@
-import * as React from "react"
-import "./Navbar.css"
-import { Logo } from "./Logo"
-import { Link } from "react-router-dom"
+import * as React from 'react'
+import './Navbar.css'
+import { Logo } from './Logo'
+import { Link } from 'react-router-dom'
 
-export default function Navbar() {
+export default function Navbar ({ isOpen }) {
   return (
-    <nav className="navbar">
+    <nav className={isOpen === true ? 'navbar-open' : 'navbar'}>
       <Logo />
       <ul className="links">
         <Link to="/">Home</Link>

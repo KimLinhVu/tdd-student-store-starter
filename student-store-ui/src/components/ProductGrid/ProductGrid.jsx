@@ -1,11 +1,11 @@
 import React from 'react'
-import "./ProductGrid.css"
+import './ProductGrid.css'
 import { ProductCard } from '../ProductCard/ProductCard'
 
 export const ProductGrid = ({
   products,
-  shoppingCart, 
-  handleAddItemToCart, 
+  shoppingCart,
+  handleAddItemToCart,
   handleRemoveItemToCart
 }) => {
   return (
@@ -13,16 +13,18 @@ export const ProductGrid = ({
       <div className="content">
           <h3>Best Selling Products</h3>
         <div className="grid">
-          {products.length > 0 ? products.map((product, idx) =>
-          <ProductCard 
+          {products.length > 0
+            ? products.map((product, idx) =>
+          <ProductCard
             showDescription={false}
             shoppingCart={shoppingCart}
-            product={product} 
-            productId={product.id} 
-            handleAddItemToCart={handleAddItemToCart} 
-            handleRemoveItemToCart={handleRemoveItemToCart} 
+            product={product}
+            productId={product.id}
+            handleAddItemToCart={handleAddItemToCart}
+            handleRemoveItemToCart={handleRemoveItemToCart}
             key={idx}
-          />) : <p>No products available</p>}
+          />)
+            : <p>No products available</p>}
         </div>
       </div>
     </div>

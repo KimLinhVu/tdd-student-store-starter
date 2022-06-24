@@ -1,22 +1,22 @@
 import React from 'react'
-import "./ProductCard.css"
+import './ProductCard.css'
 import { Link } from 'react-router-dom'
 
 export const ProductCard = ({
-  product, 
+  product,
   productId,
   shoppingCart,
-  handleAddItemToCart, 
-  handleRemoveItemToCart, 
+  handleAddItemToCart,
+  handleRemoveItemToCart,
   showDescription
 }) => {
   const getQuantity = () => {
-    let idx = shoppingCart.findIndex(item => item.itemId === productId)
-    return idx !== -1 ? <span className='quantity'><span className='amt'>{shoppingCart[idx].quantity}</span></span> : null
+    const idx = shoppingCart.findIndex(item => item.itemId === productId)
+    return idx !== -1 ? <span className='product-quantity'><span className='amt'>{shoppingCart[idx].quantity}</span></span> : null
   }
-  var formatter = new Intl.NumberFormat('en-US', {
+  const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'USD'
   })
   return (
     <div className='product-card'>
@@ -28,7 +28,7 @@ export const ProductCard = ({
           <p className="product-name">{product.name}</p>
           <p className="product-price">{formatter.format(product.price)}</p>
         </div>
-        {showDescription == true ? <p className='product-description'>{product.description}</p> : null}
+        {showDescription === true ? <p className='product-description'>{product.description}</p> : null}
         <div className="actions">
           <div className="buttons">
             <button className="remove" onClick={() => handleRemoveItemToCart(productId)}><i className="material-icons">remove</i></button>
