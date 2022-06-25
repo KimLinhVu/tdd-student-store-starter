@@ -3,7 +3,7 @@ import './Home.css'
 import { Hero } from '../Hero/Hero'
 import { ProductGrid } from '../ProductGrid/ProductGrid'
 import { SubNavBar } from '../SubNavBar/SubNavBar'
-import { About } from '../../About/About'
+import { About } from '../About/About'
 import { Contact } from '../Contact/Contact'
 
 export default function Home ({
