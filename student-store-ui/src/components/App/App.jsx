@@ -31,7 +31,8 @@ export default function App () {
 
   useEffect(() => {
     setIsFetching(true)
-    axios.get('https://codepath-store-api.herokuapp.com/store').then(res => {
+    axios.get('http://localhost:3001/store').then(res => {
+      console.log(res)
       let newProduct = res.data.products
       setBaseProducts(newProduct)
       if (!isEmptyString(search)) {
