@@ -369,6 +369,136 @@
         "Before taxes, the subtotal was $45.96",
         "After taxes and fees were applied, the total comes out to $49.98"
       ]
+    },
+    {
+      "id": 11,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "$6.49",
+      "createdAt": "6/27/2022, 9:20:10 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.9699999999999998",
+        "2 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $3",
+        "Before taxes, the subtotal was $5.97",
+        "After taxes and fees were applied, the total comes out to $6.49"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "$6.49",
+      "createdAt": "6/27/2022, 9:22:30 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $$2.97",
+        "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $$3.00",
+        "Before taxes, the subtotal was $5.97",
+        "After taxes and fees were applied, the total comes out to $6.49"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "$6.49",
+      "createdAt": "6/27/2022, 9:23:14 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97",
+        "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $3.00",
+        "Before taxes, the subtotal was $5.97",
+        "After taxes and fees were applied, the total comes out to $6.49"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 3
+        },
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 3
+        },
+        {
+          "itemId": 5,
+          "quantity": 3
+        }
+      ],
+      "total": "$42.35",
+      "createdAt": "6/27/2022, 9:24:58 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "3 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $4.50",
+        "3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97",
+        "3 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $8.97",
+        "3 total Fruit Medley purchased at a cost of $7.50 for a total cost of $22.50",
+        "Before taxes, the subtotal was $38.94",
+        "After taxes and fees were applied, the total comes out to $42.35"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 4
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "$7.57",
+      "createdAt": "6/28/2022, 9:26:48 AM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "4 total Rice Krispies purchased at a cost of $0.99 for a total cost of $3.96",
+        "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $3.00",
+        "Before taxes, the subtotal was $6.96",
+        "After taxes and fees were applied, the total comes out to $7.57"
+      ]
     }
   ]
 }

@@ -23,7 +23,7 @@ https://user-images.githubusercontent.com/90161607/175748684-d9b8d0e9-1e3c-4bc0-
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 

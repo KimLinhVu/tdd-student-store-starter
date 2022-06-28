@@ -1,0 +1,57 @@
+.orders .content {
+    padding-left: 100px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+}
+
+.orders {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+}
+
+.orders h2 {
+    color: rgb(42, 39, 39);
+    margin-bottom: 24px;
+    font-size: 28px;
+    margin-top: 60px;
+}
+
+.orders .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.orders .table .table-row {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background: white;
+    color: black;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.orders .table .table-row:hover {
+    background: #f3fffb;
+}
+
+.orders .table .table-row.table-header {
+    background: #51648C;
+    color: white;
+}
+
+.orders .table .table-row .col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    padding: 25px;
+    font-weight: 600;
+    flex: 1;
+}
