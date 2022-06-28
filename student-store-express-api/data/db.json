@@ -148,50 +148,45 @@
   "purchases": [
     {
       "id": 0,
-      "name": "Kim-Linh",
+      "name": "Kim-Linh Vu",
       "email": "kimlinh@fb.com",
       "order": [
         {
-          "itemId": 6,
-          "quantity": 4
+          "itemId": 15,
+          "quantity": 3
         },
         {
-          "itemId": 5,
+          "itemId": 12,
           "quantity": 3
         }
       ],
-      "total": 111.42524999999999,
-      "createdAt": "6/27/2022, 7:10:20 PM",
+      "total": "$1,370.15",
+      "createdAt": "6/27/2022, 7:40:53 PM",
       "receipt": [
-        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
-        "4 total Bar Code Shirts purchased at a cost of 19.99 for a total cost of 79.96",
-        "3 total Fruit Medley purchased at a cost of 7.5 for a total cost of 22.5",
-        "Before taxes, the subtotal was 102.46",
-        "After taxes and fees were applied, the total comes out to 111.42524999999999"
+        "Showing receipt for Kim-Linh Vu available at kimlinh@fb.com",
+        "3 total Mouse from 1998 purchased at a cost of $19.98 for a total cost of $59.94",
+        "3 total Apple Watch purchased at a cost of $399.99 for a total cost of $1199.97",
+        "Before taxes, the subtotal was $1,259.91",
+        "After taxes and fees were applied, the total comes out to $1,370.15"
       ]
     },
     {
       "id": 1,
       "name": "Kim-Linh",
-      "email": "kimlinh@fb.com",
+      "email": "kimlinh@fb.org",
       "order": [
         {
-          "itemId": 6,
-          "quantity": 3
-        },
-        {
-          "itemId": 9,
+          "itemId": 12,
           "quantity": 3
         }
       ],
-      "total": "$81.50",
-      "createdAt": "6/27/2022, 7:12:27 PM",
+      "total": "$1,304.97",
+      "createdAt": "6/27/2022, 8:48:23 PM",
       "receipt": [
-        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
-        "3 total Bar Code Shirts purchased at a cost of 19.99 for a total cost of 59.97",
-        "3 total Pullover Sweater purchased at a cost of 4.99 for a total cost of 14.97",
-        "Before taxes, the subtotal was $74.94",
-        "After taxes and fees were applied, the total comes out to $81.50"
+        "Showing receipt for Kim-Linh available at kimlinh@fb.org",
+        "3 total Apple Watch purchased at a cost of $399.99 for a total cost of $1199.97",
+        "Before taxes, the subtotal was $1,199.97",
+        "After taxes and fees were applied, the total comes out to $1,304.97"
       ]
     },
     {
@@ -200,22 +195,17 @@
       "email": "kimlinh@fb.org",
       "order": [
         {
-          "itemId": 6,
-          "quantity": 2
-        },
-        {
-          "itemId": 5,
-          "quantity": 2
+          "itemId": 3,
+          "quantity": 3
         }
       ],
-      "total": "$59.79",
-      "createdAt": "6/27/2022, 7:29:05 PM",
+      "total": "$9.75",
+      "createdAt": "6/27/2022, 8:49:11 PM",
       "receipt": [
         "Showing receipt for Kim-Linh available at kimlinh@fb.org",
-        "2 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $39.98",
-        "2 total Fruit Medley purchased at a cost of $7.5 for a total cost of $15",
-        "Before taxes, the subtotal was $54.98",
-        "After taxes and fees were applied, the total comes out to $59.79"
+        "3 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $8.97",
+        "Before taxes, the subtotal was $8.97",
+        "After taxes and fees were applied, the total comes out to $9.75"
       ]
     },
     {
@@ -224,110 +214,160 @@
       "email": "kimlinh@fb.org",
       "order": [
         {
-          "itemId": 6,
-          "quantity": 3
-        },
-        {
-          "itemId": 9,
+          "itemId": 3,
           "quantity": 3
         }
       ],
-      "total": "$81.50",
-      "createdAt": "6/27/2022, 7:29:33 PM",
+      "total": "$9.75",
+      "createdAt": "6/27/2022, 8:49:51 PM",
       "receipt": [
         "Showing receipt for Kim-Linh available at kimlinh@fb.org",
-        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
-        "3 total Pullover Sweater purchased at a cost of $4.99 for a total cost of $14.97",
-        "Before taxes, the subtotal was $74.94",
-        "After taxes and fees were applied, the total comes out to $81.50"
+        "3 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $8.97",
+        "Before taxes, the subtotal was $8.97",
+        "After taxes and fees were applied, the total comes out to $9.75"
       ]
     },
     {
       "id": 4,
-      "name": "",
-      "email": "",
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.org",
       "order": [
         {
-          "itemId": 6,
-          "quantity": 3
+          "itemId": 3,
+          "quantity": 2
         }
       ],
-      "total": "$65.22",
-      "createdAt": "6/27/2022, 7:29:41 PM",
+      "total": "$6.50",
+      "createdAt": "6/27/2022, 8:50:11 PM",
       "receipt": [
-        "Showing receipt for  available at ",
-        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
-        "Before taxes, the subtotal was $59.97",
-        "After taxes and fees were applied, the total comes out to $65.22"
+        "Showing receipt for Kim-Linh available at kimlinh@fb.org",
+        "2 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $5.98",
+        "Before taxes, the subtotal was $5.98",
+        "After taxes and fees were applied, the total comes out to $6.50"
       ]
     },
     {
       "id": 5,
-      "name": "",
-      "email": "",
-      "order": [],
-      "total": "$0.00",
-      "createdAt": "6/27/2022, 7:30:08 PM",
+      "name": "K",
+      "email": "K",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "$6.50",
+      "createdAt": "6/27/2022, 8:50:50 PM",
       "receipt": [
-        "Showing receipt for  available at ",
-        "Before taxes, the subtotal was $0.00",
-        "After taxes and fees were applied, the total comes out to $0.00"
+        "Showing receipt for K available at K",
+        "2 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $5.98",
+        "Before taxes, the subtotal was $5.98",
+        "After taxes and fees were applied, the total comes out to $6.50"
       ]
     },
     {
       "id": 6,
-      "name": "",
-      "email": "",
-      "order": [],
-      "total": "$0.00",
-      "createdAt": "6/27/2022, 7:30:58 PM",
+      "name": "f",
+      "email": "f",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": "$3.25",
+      "createdAt": "6/27/2022, 8:51:07 PM",
       "receipt": [
-        "Showing receipt for  available at ",
-        "Before taxes, the subtotal was $0.00",
-        "After taxes and fees were applied, the total comes out to $0.00"
+        "Showing receipt for f available at f",
+        "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99",
+        "Before taxes, the subtotal was $2.99",
+        "After taxes and fees were applied, the total comes out to $3.25"
       ]
     },
     {
       "id": 7,
-      "name": "Kim",
-      "email": "kimlinh",
+      "name": "d",
+      "email": "d",
       "order": [
         {
-          "itemId": 6,
-          "quantity": 3
+          "itemId": 3,
+          "quantity": 1
         }
       ],
-      "total": "$65.22",
-      "createdAt": "6/27/2022, 7:32:04 PM",
+      "total": "$3.25",
+      "createdAt": "6/27/2022, 8:51:34 PM",
       "receipt": [
-        "Showing receipt for Kim available at kimlinh",
-        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
-        "Before taxes, the subtotal was $59.97",
-        "After taxes and fees were applied, the total comes out to $65.22"
+        "Showing receipt for d available at d",
+        "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99",
+        "Before taxes, the subtotal was $2.99",
+        "After taxes and fees were applied, the total comes out to $3.25"
       ]
     },
     {
       "id": 8,
-      "name": "Kim-Linh Vu",
-      "email": "kimlinh@fb.com",
+      "name": "Kim",
+      "email": "kim",
       "order": [
         {
-          "itemId": 6,
-          "quantity": 3
+          "itemId": 3,
+          "quantity": 1
         },
         {
-          "itemId": 9,
+          "itemId": 6,
           "quantity": 2
         }
       ],
-      "total": "$76.07",
-      "createdAt": "6/27/2022, 7:37:38 PM",
+      "total": "$46.73",
+      "createdAt": "6/27/2022, 8:52:21 PM",
       "receipt": [
-        "Showing receipt for Kim-Linh Vu available at kimlinh@fb.com",
-        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
-        "2 total Pullover Sweater purchased at a cost of $4.99 for a total cost of $9.98",
-        "Before taxes, the subtotal was $69.95",
-        "After taxes and fees were applied, the total comes out to $76.07"
+        "Showing receipt for Kim available at kim",
+        "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99",
+        "2 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $39.98",
+        "Before taxes, the subtotal was $42.97",
+        "After taxes and fees were applied, the total comes out to $46.73"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "d",
+      "email": "d",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 1
+        }
+      ],
+      "total": "$21.74",
+      "createdAt": "6/27/2022, 8:52:30 PM",
+      "receipt": [
+        "Showing receipt for d available at d",
+        "1 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $19.99",
+        "Before taxes, the subtotal was $19.99",
+        "After taxes and fees were applied, the total comes out to $21.74"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        },
+        {
+          "itemId": 6,
+          "quantity": 2
+        }
+      ],
+      "total": "$49.98",
+      "createdAt": "6/27/2022, 9:03:12 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "2 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $5.98",
+        "2 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $39.98",
+        "Before taxes, the subtotal was $45.96",
+        "After taxes and fees were applied, the total comes out to $49.98"
       ]
     }
   ]

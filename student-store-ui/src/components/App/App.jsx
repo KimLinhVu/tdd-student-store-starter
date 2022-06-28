@@ -24,6 +24,7 @@ export default function App () {
   const [taxPrice, setTaxPrice] = useState(0)
   const [totalPrice, setTotalPrice] = useState(0)
   const [checkoutMessage, setCheckoutMessage] = useState(null)
+  const [receipt, setReceipt] = useState([])
 
   const isEmptyString = (arg) => {
     return arg === ''
@@ -106,8 +107,8 @@ export default function App () {
           shoppingCart
         })
       data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
-      console.log(data)
-
+      console.log(data.data.purchase.receipt)
+      setReceipt(data.data.purchase.receipt)
       setShoppingCart([])
       setCheckoutForm({ name: '', email: '' })
     } catch (err) {
@@ -133,6 +134,7 @@ export default function App () {
           handleOnToggle={handleOnToggle}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+          receipt={receipt}
         />
           {isFetching
             ? <h1>Loading...</h1>
