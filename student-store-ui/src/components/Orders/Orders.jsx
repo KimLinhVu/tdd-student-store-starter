@@ -12,7 +12,7 @@ export const Orders = () => {
       setOrders(newOrders)
       if (searchInput !== '') {
         setOrders(newOrders = newOrders.filter((order) => {
-          return order.email.toLowerCase().includes(searchInput)
+          return order.email.toLowerCase().includes(searchInput.toLowerCase())
         }))
       }
     })
@@ -23,7 +23,7 @@ export const Orders = () => {
         <div className="content">
             <h2>Past Orders</h2>
             <div className="search-bar">
-                <input type="text" name='order-search' placeholder='Enter email' onChange={(e) => {
+                <input type="text" name='order-search' placeholder='Filter By Email' onChange={(e) => {
                   setSearchInput(e.target.value.toLowerCase())
                 }} value={searchInput}/>
             </div>

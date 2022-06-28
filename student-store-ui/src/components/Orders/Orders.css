@@ -55,3 +55,21 @@
     font-weight: 600;
     flex: 1;
 }
+
+.orders .content .search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    margin-right: 40px;
+    margin-bottom: 10px;
+}
+
+.orders .content .search-bar input {
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px 0 0 8px;
+    border: solid 1px #e4e4e4;
+    flex: 1;
+    font-size: 16px;
+}
