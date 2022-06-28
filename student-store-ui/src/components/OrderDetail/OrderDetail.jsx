@@ -9,16 +9,11 @@ export const OrderDetail = () => {
   const [isLoading, setIsLoading] = useState(true)
   const { orderId } = useParams()
 
-  console.log(order.receipt)
-
   useEffect(() => {
     setIsLoading(true)
     axios.get(`http://localhost:3001/order/${orderId}`).then(res => {
-      console.log(res.data)
       setOrder(res.data)
       setIsLoading(false)
-    }).catch(err => {
-      console.log(err)
     })
   }, [])
   return (
