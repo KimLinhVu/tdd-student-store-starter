@@ -1,10 +1,11 @@
 const express = require('express')
-const fs = require('fs')
+// const fs = require('fs')
 const Store = require('./models/store')
 const cors = require('cors')
 const app = express()
 
 app.use(cors())
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.status(200).json({ ping: 'pong' })
@@ -13,13 +14,13 @@ app.get('/', (req, res) => {
 app.get('/store', (req, res) => {
 //   fs.readFile('./data/db.json', 'utf-8', (err, jsonString) => {
 //     if (err) {
-//       console.log(err)
+//
 //     } else {
 //       try {
 //         const data = JSON.parse(jsonString)
 //         res.status(200).json(data)
 //       } catch (error) {
-//         console.log(error)
+//
 //       }
 //     }
 //   })
@@ -31,13 +32,13 @@ app.get('/store/:productId', (req, res) => {
   const productId = req.params.productId - 1
   //   fs.readFile('./data/db.json', 'utf-8', (err, jsonString) => {
   //     if (err) {
-  //       console.log(err)
+  //
   //     } else {
   //       try {
   //         const data = JSON.parse(jsonString)
   //         res.status(200).json({ product: data.products[productId] })
   //       } catch (error) {
-  //         console.log(error)
+  //
   //       }
   //     }
   //   })
@@ -46,21 +47,25 @@ app.get('/store/:productId', (req, res) => {
 })
 
 app.post('/store', (req, res) => {
-  const shoppingCart = req.body.shoppingCart
-  const user = req.body.user
+  const { shoppingCart, user } = req.body
+
   if (!shoppingCart || !user) {
-    res.status(400)
+    return res.status(400)
   }
   const duplicates = shoppingCart => shoppingCart.filter((item, index) => shoppingCart.indexOf(item) !== index)
   if (duplicates) {
-    res.status(400)
+    return res.status(400)
   }
 
   shoppingCart.forEach(item => {
     if (!item.itemId || !item.quantity) {
-      res.status(400)
+      return res.status(400)
     }
   })
+
+  const purchase = Store.createPurchase(shoppingCart, user)
+  Store.savePurchase(purchase)
+  res.status(201).json({ purchase })
 })
 
 module.exports = app

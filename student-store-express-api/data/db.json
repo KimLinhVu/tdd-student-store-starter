@@ -145,5 +145,54 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 0,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 4
+        },
+        {
+          "itemId": 5,
+          "quantity": 3
+        }
+      ],
+      "total": 111.42524999999999,
+      "createdAt": "6/27/2022, 7:10:20 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "4 total Bar Code Shirts purchased at a cost of 19.99 for a total cost of 79.96",
+        "3 total Fruit Medley purchased at a cost of 7.5 for a total cost of 22.5",
+        "Before taxes, the subtotal was 102.46",
+        "After taxes and fees were applied, the total comes out to 111.42524999999999"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 3
+        },
+        {
+          "itemId": 9,
+          "quantity": 3
+        }
+      ],
+      "total": "$81.50",
+      "createdAt": "6/27/2022, 7:12:27 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.com",
+        "3 total Bar Code Shirts purchased at a cost of 19.99 for a total cost of 59.97",
+        "3 total Pullover Sweater purchased at a cost of 4.99 for a total cost of 14.97",
+        "Before taxes, the subtotal was $74.94",
+        "After taxes and fees were applied, the total comes out to $81.50"
+      ]
+    }
+  ]
 }
