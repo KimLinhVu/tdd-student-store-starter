@@ -32,7 +32,6 @@ export default function App () {
   useEffect(() => {
     setIsFetching(true)
     axios.get('http://localhost:3001/store').then(res => {
-      console.log(res)
       let newProduct = res.data.products
       setBaseProducts(newProduct)
       if (!isEmptyString(search)) {
@@ -98,7 +97,7 @@ export default function App () {
 
   const handleOnSubmitCheckoutForm = async () => {
     try {
-      const data = await axios.post('https://codepath-store-api.herokuapp.com/store',
+      const data = await axios.post('http://localhost:3001/store',
         {
           user: {
             name: checkoutForm.name,
@@ -107,9 +106,12 @@ export default function App () {
           shoppingCart
         })
       data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
+      console.log(data)
+
       setShoppingCart([])
       setCheckoutForm({ name: '', email: '' })
     } catch (err) {
+      console.log(err)
       setCheckoutMessage(false)
     }
   }

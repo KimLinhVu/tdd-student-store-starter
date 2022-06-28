@@ -193,6 +193,142 @@
         "Before taxes, the subtotal was $74.94",
         "After taxes and fees were applied, the total comes out to $81.50"
       ]
+    },
+    {
+      "id": 2,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.org",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 2
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "$59.79",
+      "createdAt": "6/27/2022, 7:29:05 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.org",
+        "2 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $39.98",
+        "2 total Fruit Medley purchased at a cost of $7.5 for a total cost of $15",
+        "Before taxes, the subtotal was $54.98",
+        "After taxes and fees were applied, the total comes out to $59.79"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Kim-Linh",
+      "email": "kimlinh@fb.org",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 3
+        },
+        {
+          "itemId": 9,
+          "quantity": 3
+        }
+      ],
+      "total": "$81.50",
+      "createdAt": "6/27/2022, 7:29:33 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh available at kimlinh@fb.org",
+        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
+        "3 total Pullover Sweater purchased at a cost of $4.99 for a total cost of $14.97",
+        "Before taxes, the subtotal was $74.94",
+        "After taxes and fees were applied, the total comes out to $81.50"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "",
+      "email": "",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 3
+        }
+      ],
+      "total": "$65.22",
+      "createdAt": "6/27/2022, 7:29:41 PM",
+      "receipt": [
+        "Showing receipt for  available at ",
+        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
+        "Before taxes, the subtotal was $59.97",
+        "After taxes and fees were applied, the total comes out to $65.22"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "",
+      "email": "",
+      "order": [],
+      "total": "$0.00",
+      "createdAt": "6/27/2022, 7:30:08 PM",
+      "receipt": [
+        "Showing receipt for  available at ",
+        "Before taxes, the subtotal was $0.00",
+        "After taxes and fees were applied, the total comes out to $0.00"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "",
+      "email": "",
+      "order": [],
+      "total": "$0.00",
+      "createdAt": "6/27/2022, 7:30:58 PM",
+      "receipt": [
+        "Showing receipt for  available at ",
+        "Before taxes, the subtotal was $0.00",
+        "After taxes and fees were applied, the total comes out to $0.00"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Kim",
+      "email": "kimlinh",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 3
+        }
+      ],
+      "total": "$65.22",
+      "createdAt": "6/27/2022, 7:32:04 PM",
+      "receipt": [
+        "Showing receipt for Kim available at kimlinh",
+        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
+        "Before taxes, the subtotal was $59.97",
+        "After taxes and fees were applied, the total comes out to $65.22"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Kim-Linh Vu",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 6,
+          "quantity": 3
+        },
+        {
+          "itemId": 9,
+          "quantity": 2
+        }
+      ],
+      "total": "$76.07",
+      "createdAt": "6/27/2022, 7:37:38 PM",
+      "receipt": [
+        "Showing receipt for Kim-Linh Vu available at kimlinh@fb.com",
+        "3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97",
+        "2 total Pullover Sweater purchased at a cost of $4.99 for a total cost of $9.98",
+        "Before taxes, the subtotal was $69.95",
+        "After taxes and fees were applied, the total comes out to $76.07"
+      ]
     }
   ]
 }

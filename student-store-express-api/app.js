@@ -1,5 +1,5 @@
 const express = require('express')
-// const fs = require('fs')
+const { BadRequestError } = require('./util/errors')
 const Store = require('./models/store')
 const cors = require('cors')
 const app = express()
@@ -12,54 +12,30 @@ app.get('/', (req, res) => {
 })
 
 app.get('/store', (req, res) => {
-//   fs.readFile('./data/db.json', 'utf-8', (err, jsonString) => {
-//     if (err) {
-//
-//     } else {
-//       try {
-//         const data = JSON.parse(jsonString)
-//         res.status(200).json(data)
-//       } catch (error) {
-//
-//       }
-//     }
-//   })
   const data = Store.getProducts()
   res.status(200).json({ products: data })
 })
 
 app.get('/store/:productId', (req, res) => {
   const productId = req.params.productId - 1
-  //   fs.readFile('./data/db.json', 'utf-8', (err, jsonString) => {
-  //     if (err) {
-  //
-  //     } else {
-  //       try {
-  //         const data = JSON.parse(jsonString)
-  //         res.status(200).json({ product: data.products[productId] })
-  //       } catch (error) {
-  //
-  //       }
-  //     }
-  //   })
   const data = Store.getProduct(productId)
   res.status(200).json({ product: data })
 })
 
-app.post('/store', (req, res) => {
+app.post('/store', (req, res, next) => {
   const { shoppingCart, user } = req.body
 
-  if (!shoppingCart || !user) {
-    return res.status(400)
+  if (shoppingCart === [] || user.name === '' || user.email === '') {
+    return next(new BadRequestError())
   }
-  const duplicates = shoppingCart => shoppingCart.filter((item, index) => shoppingCart.indexOf(item) !== index)
-  if (duplicates) {
-    return res.status(400)
+
+  if (new Set(shoppingCart).size !== shoppingCart.length) {
+    return next(new BadRequestError())
   }
 
   shoppingCart.forEach(item => {
     if (!item.itemId || !item.quantity) {
-      return res.status(400)
+      return next(new BadRequestError())
     }
   })
 
@@ -67,5 +43,14 @@ app.post('/store', (req, res) => {
   Store.savePurchase(purchase)
   res.status(201).json({ purchase })
 })
+
+function genericErrorHandler (error, req, res, next) {
+  const status = error.status || 500
+  const message = error.message || "Something wen't wrong in the application"
+
+  return res.status(status).json({ error: { message, status } })
+}
+
+app.use(genericErrorHandler)
 
 module.exports = app
