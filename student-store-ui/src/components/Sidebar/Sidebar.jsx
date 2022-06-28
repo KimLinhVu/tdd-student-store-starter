@@ -2,6 +2,7 @@ import * as React from 'react'
 import './Sidebar.css'
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
+import { Receipt } from '../Receipt/Receipt'
 
 export default function Sidebar ({
   isOpen,
@@ -15,7 +16,8 @@ export default function Sidebar ({
   checkoutMessage,
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
-  handleOnToggle
+  handleOnToggle,
+  receipt
 }) {
   return (
     <section className={isOpen === true ? 'sidebar open' : 'sidebar closed'}>
@@ -38,6 +40,7 @@ export default function Sidebar ({
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
         />
+        <Receipt receipt={receipt}/>
       </>
         : null}
     </section>

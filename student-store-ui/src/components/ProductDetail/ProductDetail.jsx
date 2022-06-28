@@ -17,7 +17,7 @@ export const ProductDetail = ({
 
   useEffect(() => {
     setIsFetching(true)
-    axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`).then(res => {
+    axios.get(`http://localhost:3001/store/${productId}`).then(res => {
       setProduct(res.data.product)
     }).catch(err => {
       setError(err)
