@@ -6,6 +6,8 @@ import { NotFound } from '../NotFound/NotFound'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { ProductDetail } from '../ProductDetail/ProductDetail'
+import { Orders } from '../Orders/Orders'
+import { OrderDetail } from '../OrderDetail/OrderDetail'
 import axios from 'axios'
 
 import './App.css'
@@ -107,12 +109,11 @@ export default function App () {
           shoppingCart
         })
       data.statusText === 'Created' ? setCheckoutMessage(true) : setCheckoutMessage(false)
-      console.log(data.data.purchase.receipt)
       setReceipt(data.data.purchase.receipt)
       setShoppingCart([])
       setCheckoutForm({ name: '', email: '' })
     } catch (err) {
-      console.log(err)
+      setError(err)
       setCheckoutMessage(false)
     }
   }
@@ -165,6 +166,8 @@ export default function App () {
                   setError={setError}
                 />}
               />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/orders/:orderId" element={<OrderDetail />} />
               <Route path="*" element={<NotFound />}/>
 
             </Routes>

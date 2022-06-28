@@ -6,8 +6,18 @@ class Store {
     return data
   }
 
+  static getOrders () {
+    const data = storage.get('purchases').value()
+    return data
+  }
+
   static getProduct (id) {
     const data = storage.get('products').value()
+    return data[id]
+  }
+
+  static getOrder (id) {
+    const data = storage.get('purchases').value()
     return data[id]
   }
 
@@ -51,12 +61,16 @@ class Store {
   }
 
   static createReceipt (shoppingCart, user, subtotal, total) {
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    })
     const products = Store.getProducts()
     const result = [`Showing receipt for ${user.name} available at ${user.email}`]
 
     shoppingCart.forEach(item => {
       const idx = item.itemId - 1
-      const newLine = `${item.quantity} total ${products[idx].name} purchased at a cost of $${products[idx].price} for a total cost of $${products[idx].price * item.quantity}`
+      const newLine = `${item.quantity} total ${products[idx].name} purchased at a cost of ${formatter.format(products[idx].price)} for a total cost of ${formatter.format(products[idx].price * item.quantity)}`
       result.push(newLine)
     })
     result.push(`Before taxes, the subtotal was ${subtotal}`)

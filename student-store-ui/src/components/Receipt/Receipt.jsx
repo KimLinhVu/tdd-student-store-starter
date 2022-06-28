@@ -5,7 +5,7 @@ export const Receipt = ({ receipt }) => {
   return (
     <div className="checkout">
         <div className="card">
-            <header className="card0head">
+            <header className="card-head">
                 <h4 className="card-title">Receipt</h4>
             </header>
             <section className="card-body">

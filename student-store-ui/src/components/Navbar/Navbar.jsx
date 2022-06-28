@@ -11,7 +11,7 @@ export default function Navbar ({ isOpen }) {
         <Link to="/">Home</Link>
         <a href='/#about'>About Us</a>
         <a href="/#contact">Contact Us</a>
-        <Link to="/">Buy Now</Link>
+        <Link to="/orders">Past Orders</Link>
       </div>
     </nav>
   )

@@ -44,6 +44,17 @@ app.post('/store', (req, res, next) => {
   res.status(201).json({ purchase })
 })
 
+app.get('/order', (req, res, next) => {
+  const data = Store.getOrders()
+  res.status(200).json(data)
+})
+
+app.get('/order/:orderId', (req, res, next) => {
+  const orderId = req.params.orderId
+  const data = Store.getOrder(orderId)
+  res.status(200).json(data)
+})
+
 function genericErrorHandler (error, req, res, next) {
   const status = error.status || 500
   const message = error.message || "Something wen't wrong in the application"

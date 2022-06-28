@@ -8,6 +8,7 @@
     top: 0px;
     height: 100vh;
     padding: 0;
+    overflow-y: scroll;
     padding-bottom: 2rem;
     background: #51648C;
     border-right: solid 1px white;
