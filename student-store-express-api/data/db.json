@@ -499,6 +499,59 @@
         "Before taxes, the subtotal was $6.96",
         "After taxes and fees were applied, the total comes out to $7.57"
       ]
+    },
+    {
+      "id": 16,
+      "name": "Nicole",
+      "email": "nicole@fb.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 4
+        },
+        {
+          "itemId": 3,
+          "quantity": 3
+        },
+        {
+          "itemId": 8,
+          "quantity": 2
+        }
+      ],
+      "total": "$59.76",
+      "createdAt": "6/28/2022, 1:56:56 PM",
+      "receipt": [
+        "Showing receipt for Nicole available at nicole@fb.com",
+        "4 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $6.00",
+        "3 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $8.97",
+        "2 total Knitted Beanie purchased at a cost of $19.99 for a total cost of $39.98",
+        "Before taxes, the subtotal was $54.95",
+        "After taxes and fees were applied, the total comes out to $59.76"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "kimlinh",
+      "email": "kimlinh@fb.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 4
+        },
+        {
+          "itemId": 3,
+          "quantity": 3
+        }
+      ],
+      "total": "$16.28",
+      "createdAt": "6/30/2022, 3:42:35 PM",
+      "receipt": [
+        "Showing receipt for kimlinh available at kimlinh@fb.com",
+        "4 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $6.00",
+        "3 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $8.97",
+        "Before taxes, the subtotal was $14.97",
+        "After taxes and fees were applied, the total comes out to $16.28"
+      ]
     }
   ]
 }
